@@ -1,9 +1,9 @@
 # Neural-Style-Transfer
 
 ## Intro
-In this repo, I implemented Neural Style Transfer Algorithm. This algorithm was created by Gatys et al. (2015) (http://arxiv.org/abs/1508.06576). This Deep Learning technique takes two images, namely, the content image(C) and a style image(S) and generate a new image(G) which combines the content of image C with style of image S.
+In this repo, I implemented Neural Style Transfer Algorithm. This algorithm was created by Gatys et al. (2015) (http://arxiv.org/abs/1508.06576). This Deep Learning technique takes two images, namely, the content image(C) and a style image(S) and generates a new image(G) which combines the content of image C with style of image S.
 
-Here I used a pretrained VGG-19 model which is a very deep convolutional neural network because these deep pretrained models can detect low level features such as edges and vertex at earlier layers and high level features at deep layers, pretty accurately.
+I used a pre-trained VGG-19 model which is a very deep convolutional neural network because these deep pre-trained models can detect low-level features such as edges and vertex at earlier layers and high-level features at deep layers, pretty accurately.
 
 ### Pre-trained model license
 ----------------------------------------------------------------------------------
