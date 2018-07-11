@@ -1,4 +1,4 @@
-<h1>Neural-Style-Transfer</h1>
+<h1>Neural Style Transfer</h1>
 <h4 align="center">Example Image</h4>
 <p align="center">
   <img src="example image.png?raw=true" width="85%" title="Example Image" alt="Example Image">
