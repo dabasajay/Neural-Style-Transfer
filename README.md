@@ -8,6 +8,13 @@ In this repo, I implemented Neural Style Transfer Algorithm. This algorithm was 
 
 I used a pre-trained VGG-19 model which is a very deep convolutional neural network because these deep pre-trained models can detect low-level features such as edges and vertex at earlier layers and high-level features at deep layers, pretty accurately.
 
+<h2>Try Yourself</h2>
+<ol>
+	<li>Download and put VGG-19 weights in vgg_model folder so path looks like 'vgg_model/VGG-19.mat'</li>
+	<li>Put style and content image in images folder. Ex: 'images/mystyleimage.jpeg' & 'images/mycontentimage.jpeg'</li>
+	<li>Run nst_script.py</li>
+</ol>
+
 <h2>Pre-trained model license</h2>
 Here, we are using a pretrained model that can be downloaded at the following link: http://www.vlfeat.org/matconvnet/pretrained/. The pretrained model's parameters are due to the MatConvNet Team. Their software comes with the license replicated below.
 Copyright (c) 2014-16 The MatConvNet Team.
