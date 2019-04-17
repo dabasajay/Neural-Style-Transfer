@@ -8,11 +8,9 @@ import numpy as np
 import pandas as pd
 import scipy
 import imageio
-from scipy import io
 import tensorflow as tf
-from IPython.display import Image
-import matplotlib.pyplot as plt
 from matplotlib.pyplot import imshow
+
 """
     *We'll implement the algorithm in four main steps :
     *1. Define content cost function : 
