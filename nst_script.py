@@ -13,27 +13,13 @@ import tensorflow as tf
 from IPython.display import Image
 import matplotlib.pyplot as plt
 from matplotlib.pyplot import imshow
-
-# Today, I am going to implement Neural Style Transfer Algorithm. This algorithm was created by Gatys et al. (2015) (http://arxiv.org/abs/1508.06576)).
-
-# This Deep Learning technique takes two images, namely, the content image(C) and a style image(S) and generate a new image(G) which combines the content of image C with style of image S.
-
-
-# Here we're going to use a pretrained VGG-19 model which is a very deep convolutional neural network because these deep pretrained models can detect low level features such as edges and vertex at earlier layers and high level features at deep layers, pretty accurately. The model can be downloaded from [here](http://www.vlfeat.org/matconvnet/models/imagenet-vgg-verydeep-19.mat).
-
-# I've already downloaded the model and if you want to work yourself, don't hesitate to fork the script :)
-
-# ## Problem Formulation
-
-# We'll implement the algorithm in four main steps :
-# 1. Define content cost function : 
-# 2. Define style cost function
-# 3. Put it together to get final cost function.
-# 4. Optimization
-
-# If you want to see more details of definition of these cost function, you can read the original paper.
-
-# ## Let's code this!
+"""
+    *We'll implement the algorithm in four main steps :
+    *1. Define content cost function : 
+    *2. Define style cost function
+    *3. Put it together to get final cost function.
+    *4. Optimization
+"""
 
 def compute_content_cost(a_C, a_G):
     """
@@ -95,8 +81,7 @@ def total_cost(J_content, J_style, alpha = 10, beta = 40):
     J = alpha * J_content + beta * J_style
     return J
 
-# So far we've talked about capturing style from single layer only. It turns out we get more visual pleasing images if we capture style from multiple layers of network.
-
+# Capture style from multiple layers of network.
 STYLE_LAYERS = [('conv1_1', 0.2),('conv2_1', 0.2),('conv3_1', 0.2),('conv4_1', 0.2),('conv5_1', 0.2)]
 
 def compute_multiple_style_cost(model, STYLE_LAYERS):
@@ -236,11 +221,11 @@ tf.reset_default_graph()
 sess = tf.InteractiveSession()
 
 # Content Image
-content_image = imageio.imread("../input/helpmeagain/mycontentimage.jpeg")
+content_image = imageio.imread("images/mycontentimage.jpeg")
 content_image = reshape_and_normalize_image(content_image)
 
 # Style Image
-style_image = imageio.imread("../input/helpmeagain/mystyleimage.jpeg")
+style_image = imageio.imread("images/mystyleimage.jpeg")
 style_image = reshape_and_normalize_image(style_image)
 
 # We'll initialize the "generated" image as a noisy image created from the content image. 
@@ -249,7 +234,7 @@ style_image = reshape_and_normalize_image(style_image)
 generated_image = generate_noise_image(content_image)
 
 # loading the pretrained model
-model = load_vgg_model("../input/neuralstyletransfer/VGG-19.mat")
+model = load_vgg_model("'vgg_model/VGG-19.mat'")
 
 # Assign the content image to be the input of the VGG model.  
 sess.run(model['input'].assign(content_image))
@@ -303,7 +288,3 @@ image = np.clip(image[0], 0, 255).astype('uint8')
 # Show the generate image
 print("Here's our final image :")
 _ = imshow(image)
-
-# You'll see our generated image is a combination of content image and style image!
-
-# If you want more style involved or more content involved into the generated image, try changine the hyperparameters, alpha and beta. Also try changing the lamba in style for each layer to see some interesting results!
