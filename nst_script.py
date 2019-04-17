@@ -9,7 +9,8 @@ import pandas as pd
 import scipy
 import imageio
 import tensorflow as tf
-from matplotlib.pyplot import imshow
+from matplotlib.pyplot import imshow, imsave
+from config import config
 
 """
     *We'll implement the algorithm in four main steps :
@@ -119,9 +120,9 @@ class CONFIG:
     COLOR_CHANNELS = 3
     NOISE_RATIO = 0.6
     MEANS = np.array([123.68, 116.779, 103.939]).reshape((1,1,1,3)) 
-    VGG_MODEL = 'vgg_model/VGG-19.mat'
-    STYLE_IMAGE = 'images/mystyleimage.jpeg' # Style image to use.
-    CONTENT_IMAGE = 'images/mycontentimage.jpeg' # Content image to use.
+    VGG_MODEL = config['model_path']
+    STYLE_IMAGE = config['style_image_path'] # Style image to use.
+    CONTENT_IMAGE = config['content_image_path'] # Content image to use.
     
 def load_vgg_model(path):
     vgg = scipy.io.loadmat(path)
@@ -219,11 +220,11 @@ tf.reset_default_graph()
 sess = tf.InteractiveSession()
 
 # Content Image
-content_image = imageio.imread("images/mycontentimage.jpeg")
+content_image = imageio.imread(config['content_image_path'])
 content_image = reshape_and_normalize_image(content_image)
 
 # Style Image
-style_image = imageio.imread("images/mystyleimage.jpeg")
+style_image = imageio.imread(config['style_image_path'])
 style_image = reshape_and_normalize_image(style_image)
 
 # We'll initialize the "generated" image as a noisy image created from the content image. 
@@ -232,7 +233,7 @@ style_image = reshape_and_normalize_image(style_image)
 generated_image = generate_noise_image(content_image)
 
 # loading the pretrained model
-model = load_vgg_model("'vgg_model/VGG-19.mat'")
+model = load_vgg_model(config['model_path'])
 
 # Assign the content image to be the input of the VGG model.  
 sess.run(model['input'].assign(content_image))
@@ -286,3 +287,4 @@ image = np.clip(image[0], 0, 255).astype('uint8')
 # Show the generate image
 print("Here's our final image :")
 _ = imshow(image)
+_ = imsave(config['output_image_path'],image)

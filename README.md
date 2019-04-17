@@ -11,8 +11,10 @@ I used a pre-trained VGG-19 model which is a very deep convolutional neural netw
 <h2>Try Yourself</h2>
 <ol>
 	<li>Download and put VGG-19 weights (<a href="http://www.vlfeat.org/matconvnet/models/imagenet-vgg-verydeep-19.mat">Link ~ 510MB</a>) in vgg_model folder so path looks like 'vgg_model/VGG-19.mat'</li>
-	<li>Put style and content image in images folder. Ex: 'images/mystyleimage.jpeg' & 'images/mycontentimage.jpeg'</li>
+	<li>Put style and content image in images folder.
+	Ex: 'images/mystyleimage.jpeg' & 'images/mycontentimage.jpeg'</li>
 	<strong>NOTE: Images must be of dimensions 400x300</strong>
+	<li>Review config.py for paths</li>
 	<li>Run nst_script.py</li>
 </ol>
 
