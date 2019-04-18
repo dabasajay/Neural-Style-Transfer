@@ -6,10 +6,10 @@ Date Created : Jun 7,2018
 # Import required packages
 import numpy as np
 import pandas as pd
-import scipy
+from scipy import io
 import imageio
 import tensorflow as tf
-from matplotlib.pyplot import imshow, imsave
+from matplotlib.pyplot import imsave
 from config import config
 
 """
@@ -125,7 +125,7 @@ class CONFIG:
     CONTENT_IMAGE = config['content_image_path'] # Content image to use.
     
 def load_vgg_model(path):
-    vgg = scipy.io.loadmat(path)
+    vgg = io.loadmat(path)
     vgg_layers = vgg['layers']
     def _weights(layer, expected_layer_name):
         """
@@ -285,6 +285,5 @@ image = image + CONFIG.MEANS
 image = np.clip(image[0], 0, 255).astype('uint8')
 
 # Show the generate image
-print("Here's our final image :")
-_ = imshow(image)
 _ = imsave(config['output_image_path'],image)
+print("Image saved successfully")
