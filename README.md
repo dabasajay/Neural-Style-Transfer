@@ -1,5 +1,10 @@
 ## Neural Style Transfer
 
+[![Issues](https://img.shields.io/github/issues/dabasajay/Neural-Style-Transfer.svg?color=%231155cc)](https://github.com/dabasajay/Image-Caption-Generator/issues)
+[![Forks](https://img.shields.io/github/forks/dabasajay/Neural-Style-Transfer.svg?color=%231155cc)](https://github.com/dabasajay/Image-Caption-Generator/network)
+[![Stars](https://img.shields.io/github/stars/dabasajay/Neural-Style-Transfer.svg?color=%231155cc)](https://github.com/dabasajay/Image-Caption-Generator/stargazers)
+[![Ajay Dabas](https://img.shields.io/badge/Ajay-Dabas-ff0000.svg)](https://dabasajay.github.io/)
+
 <h4 align="center">Example Image</h4>
 <p align="center">
   <img src="example image.png?raw=true" width="85%" title="Example Image" alt="Example Image">
@@ -13,8 +18,8 @@ I used a pre-trained VGG-19 model which is a very deep convolutional neural netw
 ## Try Yourself
 
 1. Download and put VGG-19 weights (<a href="http://www.vlfeat.org/matconvnet/models/imagenet-vgg-verydeep-19.mat">Link ~ 510MB</a>) in vgg_model folder so path looks like `vgg_model/VGG-19.mat`
-2. Put style and content image in images folder.
-Example: `images/mystyleimage.jpeg` & `images/mycontentimage.jpeg`
+2. Put style and content image in images folder. <br>
+Example: `images/mystyleimage.jpeg` & `images/mycontentimage.jpeg` <br>
 **NOTE**: Images must be of dimensions 400x300
 3. Review `config.py` for paths and other configurations (explained below)
 4. Run `nst_script.py`
