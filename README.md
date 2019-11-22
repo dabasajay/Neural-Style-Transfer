@@ -3,7 +3,7 @@
 [![Issues](https://img.shields.io/github/issues/dabasajay/Neural-Style-Transfer.svg?color=%231155cc)](https://github.com/dabasajay/Neural-Style-Transfer/issues)
 [![Forks](https://img.shields.io/github/forks/dabasajay/Neural-Style-Transfer.svg?color=%231155cc)](https://github.com/dabasajay/Neural-Style-Transfer/network)
 [![Stars](https://img.shields.io/github/stars/dabasajay/Neural-Style-Transfer.svg?color=%231155cc)](https://github.com/dabasajay/Neural-Style-Transfer/stargazers)
-[![Ajay Dabas](https://img.shields.io/badge/Ajay-Dabas-ff0000.svg)](https://dabasajay.github.io/)
+[![Ajay Dabas](https://img.shields.io/badge/Ajay-Dabas-825ee4.svg)](https://dabasajay.github.io/)
 
 <h4 align="center">Example Image</h4>
 <p align="center">
